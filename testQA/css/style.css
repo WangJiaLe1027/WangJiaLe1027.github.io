@@ -7,7 +7,7 @@
 }
 
 body {
-	background: #dddddd;
+	background: #ffffff;
 	font-family: 'Open Sans', Arial, Helvetica, Sans-serif, Verdana, Tahoma;
 }
 
@@ -16,7 +16,7 @@ ul {
 }
 
 a {
-	color: #dddddd;
+	color: #38A0EC;
 	text-decoration: none;
 }
 
@@ -50,7 +50,7 @@ h1 a {
 	cursor: pointer;
 	display: block;
 	padding: 15px 15px 15px 15px;
-	color: #4D4D4D;
+	color: #111111;
 	font-size: 14px;
 	font-weight: 700;
 	border-bottom: 1px solid #CCC;
@@ -82,11 +82,11 @@ h1 a {
 }
 
 .accordion li.open .link {
-	color: #b63b4d;
+	color: #38a0ec;
 }
 
 .accordion li.open i {
-	color: #b63b4d;
+	color: #38a0ec;
 }
 .accordion li.open i.fa-chevron-down {
 	-webkit-transform: rotate(180deg);
@@ -120,7 +120,7 @@ h1 a {
  }
 
  .submenu a:hover {
- 	background: #b63b4d;
+ 	background: #38a0ec;
  	color: #FFF;
  }
 
