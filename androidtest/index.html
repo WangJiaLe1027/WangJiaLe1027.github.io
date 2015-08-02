@@ -1,0 +1,14 @@
+<html>
+<body onload="setInterval('Crash()', 5000);">
+    <video id = "crash" src = "crash.mkv" controls = "controls">
+Your Browser Does not support the video tag.
+</video>
+    <script language = "javascript">
+        function Crash(){
+            var crash = document.getElementById("crash");
+            crash.load();
+            crash.play();
+        }
+    </script>
+</body>
+</html>
