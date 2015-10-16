@@ -2,10 +2,10 @@
 
 <head>
   <title>Wangjiale</title>
-  <script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery/jquery-1.4.min.js"></script>
+  <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js">
 
   <!-- wangjiale1027.github.io Baidu tongji analytics -->
-  <!-- <script>
+  <script>
   var _hmt = _hmt || [];
   (function() {
   var hm = document.createElement("script");
@@ -13,23 +13,36 @@
   var s = document.getElementsByTagName("script")[0];
   s.parentNode.insertBefore(hm, s);
   })();
-  </script> -->
+  </script>
 
   <script type="text/javascript">
   $(document).ready(function(){
-    $("button").click(function(){
-      $("p").hide();
+    var x=0;
+    $("body").click(function(){
+      x=x+1;
+      if (x%2) {
+        $("#line1").fadeIn(1000);
+        $("#line2").fadeIn(1000);
+        $("#line3").fadeIn(1000);
+        $("#line4").fadeIn(1000);
+      }else {
+        $("#line1").hide();
+        $("#line2").hide();
+        $("#line3").hide();
+        $("#line4").hide();
+      }
+
     });
   });
   </script>
 
 </head>
 
-<body background="pic.jpeg" style = "background-size : cover">
-<p align="right">Hello</p>
-<h1 align="right">This is my test page</h1>
-<h1 align="right" style = "text-shadow:2px 2px 2px #555555">Build new page need some time</h1>
-<h3 align="right">WangJiaLe</h3>
+<body background="background.jpg" style = "background-size : cover">
+<h1 id="line1" align="center" style="display:none;">Hello</h1>
+<h1 id="line2" align="center" style="display:none;">This is my test page</h1>
+<h1 id="line3" align="center" style ="text-shadow:2px 2px 2px #555555;display:none;">Build new page need some time</h1>
+<h3 id="line4" align="center" style="display:none;">WangJiaLe</h3>
 </body>
 
 </html>
