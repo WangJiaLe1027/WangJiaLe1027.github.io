@@ -1,0 +1,213 @@
+body {
+	font-family: 'microsoft yahei', 'Hiragino Sans GB', 'Helvetica';
+}
+* {
+	padding: 0;
+	margin: 0;
+}
+a {
+	text-decoration: none;
+}
+body {
+	background-color: #f0f0f0;
+}
+ul,
+li {
+	list-style-type: none;
+}
+.clearfix:after {
+	content: '\20';
+	display: block;
+	height: 0;
+	clear: both
+}
+.clearfix {
+	zoom: 1
+}
+.hosp-infor {
+	background-color: #4ba2ed;
+	height: 110px;
+	text-align: center;
+	color: #fff;
+}
+.hosp-infor .hosp-name {
+	font-size: 17px;
+	padding: 10px 0px 5px;
+}
+.hosp-infor .hosp-dengji {
+	font-size: 11px;
+	margin-bottom: 15px;
+}
+.hosp-infor .hosp-msg {} .hosp-infor .hosp-msg a {
+	display: inline-block;
+	color: white;
+	font-size: 14px;
+}
+.hosp-msg .hosp-add {
+	background: url(../images/position-sign.png) no-repeat left center;
+	background-size: 10px 14px;
+	padding-left: 15px;
+}
+.hosp-msg .hosp-index {
+	background: url(../images/hosp-index.png) no-repeat left center;
+	background-size: 15px 14px;
+	padding-left: 20px;
+}
+.line {
+	background: url(../images/line.png) no-repeat center bottom;
+	width: 1px;
+	background-size: 1px 15px;
+	display: inline-block;
+	height: 15px;
+	padding: 0px 5px;
+	vertical-align: -2px;
+}
+.hosp-star {
+	background-color: #FFFFFF;
+	position: relative;
+	font-size: 14px;
+}
+.hosp-star .hosp-star-text {
+	padding: 15px;
+}
+.hosp-star .more-star {
+	display: inline-block;
+	position: absolute;
+	background: url(../images/jiantou1.png) no-repeat right center;
+	background-size: 7px 15px;
+	color: #646464;
+	top: 10px;
+	right: 15px;
+	padding: 5px 15px 5px 0px;
+}
+.hosp-star-list {
+	border-bottom: 1px solid #dcdcdc;
+	border-top: 1px solid #dcdcdc;
+	width: 100%;
+
+}
+.hosp-star-list ul {
+	background-color: #FFFFFF;
+	padding: 10px 0px 10px 10px;
+	white-space: nowrap;
+	overflow: hidden;
+}
+.hosp-star-list ul li {
+	border: 1px solid #f59c00;
+	padding: 20px 10px 10px 10px;
+	display: inline-block;
+	font-size: 12px;
+	position: relative;
+	border-radius: 6px;
+	margin-right: 10px;
+}
+.hosp-doc {
+	margin-bottom: 5px;
+}
+.doc-photo {
+	border: 1px solid #dcdcdc;
+	width: 40px;
+	height: 40px;
+	border-radius: 4px;
+	float: left;
+	overflow: hidden;
+	margin-right: 10px;
+}
+.doc-photo-bg{
+ display: table-cell;vertical-align: middle;text-align: center;width: 40px;height: 40px;}
+ .doc-photo-bg .doc-img{
+ 	margin-left: -1px;width: 40px;height: 40px;
+ }
+.doc-msg {
+	float: left;
+}
+.doc-msg .doc-name {
+	font-size: 14px;
+	display: inline-block;
+	width: 55px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	vertical-align: middle;
+}
+.doc-msg .doc-job {
+	display: inline-block;
+	vertical-align: middle;
+}
+.doc-msg .doc-msg-text {
+	vertical-align: middle;
+	margin-bottom: 3px;
+}
+.doc-msg .doc-msg-exp,
+.doc-msg .doc-good {
+	color: #717171;
+}
+.hos-star {
+	background: url(../images/star.png) no-repeat center center;
+	background-size: 15px 15px;
+	height: 15px;
+	width: 15px;
+	position: absolute;
+	top: 49px;
+	left: 40px;
+}
+.kemu {
+	background-color: #faa032;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	border-bottom-right-radius: 8px;
+	padding: 3px 7px;
+	color: #FFFFFF;
+	position: absolute;
+	top: -6px;
+	left: -1px;
+}
+.here {
+	width: 80px;
+	height: 80px;
+	position: absolute;
+	top: 104px;
+	left: 106px;
+	z-index:10 ;
+}
+.hosp-tabBox .hd {
+	height: 40px;
+	line-height: 40px;
+	font-size: 14px;
+	background: #ffffff;
+	border-top: 1px solid #dcdcdc;
+	border-bottom: 1px solid #dcdcdc;
+	position: relative;
+	margin-top: 10px;
+}
+.hosp-tabBox .hd ul {
+	height: 41px;
+	overflow: hidden;
+	width: 100%;
+}
+.hosp-tabBox .hd ul li {
+	width: 49%;
+	text-align: center;
+	float: left;
+	color: #646464;
+}
+.hosp-tabBox .hd ul .on {
+	color: #4ba2ed;
+	border-bottom: 1px solid #4ba2ed;
+}
+.hosp-tabBox .hd .line {
+	background: url(images/line.png) no-repeat right center;
+	background-size: 1px 18px;
+}
+.hosp-tabBox .bd ul {} .hosp-tabBox .bd li {
+	height: 44px;
+	line-height: 44px;
+	background-color: #FFFFFF;
+	border-bottom: 1px solid #dcdcdc;
+	font-size: 14px;
+	padding: 0px 15px;
+}
+.hosp-tabBox .bd li .doc-num {
+	color: #646464;
+	float: right;
+}
