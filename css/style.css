@@ -2179,6 +2179,13 @@ a {
 #header .header-nav .social a.mail:hover {
   border: 1px solid #00abff;
 }
+#header .header-nav .social a.StackOverflow {
+  background: url("/img/stackoverflow.png") center no-repeat #00abff;
+  border: 1px solid #00abff;
+}
+#header .header-nav .social a.StackOverflow:hover {
+  border: 1px solid #00abff;
+}
 #header .switch-part {
   width: 100%;
   position: absolute;
