@@ -80,7 +80,7 @@ var _hmt = _hmt || [];
 				<div class="tips-box hide">
 					<div class="tips-arrow"></div>
 					<ul class="tips-inner">
-						<li>Menu</li>
+						<li>菜单</li>
 						<li>标签</li>
 						
 						
@@ -201,67 +201,6 @@ var _hmt = _hmt || [];
 
       <div class="body-wrap">
   
-    <article id="post-SceneKit" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/public/2016/05/18/SceneKit/" class="article-date">
-  	<time datetime="2016-05-18T10:28:55.000Z" itemprop="datePublished">2016-05-18</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/public/2016/05/18/SceneKit/">SceneKit虚拟现实和3D图形</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>上期分享中实现了使用CoreMotion获取设备运动状态，从而实现交互数据准备。<br>本期要简单介绍一下SceneKit，用这个图形框架实现虚拟现实的立体图像，以及图像对运动的响应。</p>
-<p>● 传感器 – 核心运动框架(CoreMotion):<br>● 气压计,重力感应,陀螺仪<br>● 可以获取到的数据:<br>● 三轴重力加速度,三轴角速度,三轴用户给设备的加速度,三<br>轴磁力值;<br>● 气压及根据气压变化测量到的相对高度变化;<br>● 设备运动状态姿势;<br>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/public/tags/vr/">vr</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/public/2016/05/18/SceneKit/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
     <article id="post-CoreMotion" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -305,6 +244,73 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a  href="/public/2016/05/18/CoreMotion/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-SceneKit" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/public/2016/05/18/SceneKit/" class="article-date">
+  	<time datetime="2016-05-18T10:28:55.000Z" itemprop="datePublished">2016-05-18</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/public/2016/05/18/SceneKit/">SceneKit虚拟现实和3D图形</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>上期分享中实现了使用CoreMotion获取设备运动状态，从而实现交互数据准备。<br>本期要简单介绍一下SceneKit，用这个图形框架实现虚拟现实的立体图像，以及图像对运动的响应。</p>
+<p>● SCNView：显示SceneKit内容的视图</p>
+<p>● SCNScene：加载其他工具构建的的3D文件场景，或者自己编写的场景，用于显示这个场景。</p>
+<p>● SCNNode：一个场景的基本层次结构，节点可以添加几何形状，灯光，摄像机等……</p>
+<p>● SCNGeometry：</p>
+<p>● SCNMaterial：表面外观特征，指定材料的表面着色纹理，以及如何响应场景灯光。</p>
+<p>● SCNLight：一个节点，在渲染场景中提供着色的光源。</p>
+<p>● SCNCamera：一个节点，场景观察视角的摄像机。<br>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/public/tags/vr/">vr</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/public/2016/05/18/SceneKit/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
