@@ -20,7 +20,7 @@
 ● SCNNode：一个场景的基本层次结构，节点可以添加几何形状，灯光，摄">
 <meta property="og:image" content="http://7xrxzy.com1.z0.glb.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-08-09%2017.45.56.png">
 <meta property="og:image" content="http://7xrxzy.com1.z0.glb.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-08-09%2017.46.29.png">
-<meta property="og:updated_time" content="2016-08-10T10:49:40.000Z">
+<meta property="og:updated_time" content="2016-08-11T03:10:08.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SceneKit虚拟现实和3D图形">
 <meta name="twitter:description" content="上期分享中实现了使用CoreMotion获取设备运动状态，从而实现交互数据准备。本期要简单介绍一下SceneKit，用这个图形框架实现虚拟现实的立体图像，以及图像对运动的响应。
@@ -93,11 +93,11 @@ var _hmt = _hmt || [];
 				<div class="tips-box hide">
 					<div class="tips-arrow"></div>
 					<ul class="tips-inner">
-						<li>Menu</li>
-						<li>Tags</li>
+						<li>菜单</li>
+						<li>标签</li>
 						
 						
-						<li>About</li>
+						<li>关于我</li>
 						
 					</ul>
 				</div>
@@ -258,26 +258,7 @@ var _hmt = _hmt || [];
 <p>● SCNLight：一个节点，在渲染场景中提供着色的光源。</p>
 <p>● SCNCamera：一个节点，场景观察视角的摄像机。<br><a id="more"></a></p>
 <h2 id="快速入门Demo0"><a href="#快速入门Demo0" class="headerlink" title="快速入门Demo0"></a>快速入门Demo0</h2><p>新建一个Xcode工程<br><img src="http://7xrxzy.com1.z0.glb.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-08-09%2017.45.56.png" alt="img"><br><img src="http://7xrxzy.com1.z0.glb.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-08-09%2017.46.29.png" alt="img"><br>选择SceneKit，就会初始化一个Demo.我们称之为Demo0吧，这是一个简单的开始，通过了解Demo中的代码你可以快速了解SceneKit具体能干什么。</p>
-<p><pre><code></code></pre></p>
-<ul>
-<li><p>(void)viewDidLoad<br>{<br>  [super viewDidLoad];</p>
-<p>  // create a new scene<br>  SCNScene *scene = [SCNScene sceneNamed:@”art.scnassets/ship.scn”];</p>
-<p>  // create and add a camera to the scene<br>  SCNNode *cameraNode = [SCNNode node];<br>  cameraNode.camera = [SCNCamera camera];<br>  [scene.rootNode addChildNode:cameraNode];</p>
-<p>  // place the camera<br>  cameraNode.position = SCNVector3Make(0, 0, 15);</p>
-<p>  // create and add a light to the scene<br>  SCNNode *lightNode = [SCNNode node];<br>  lightNode.light = [SCNLight light];<br>  lightNode.light.type = SCNLightTypeOmni;<br>  lightNode.position = SCNVector3Make(0, 10, 10);<br>  [scene.rootNode addChildNode:lightNode];</p>
-<p>  // create and add an ambient light to the scene<br>  SCNNode *ambientLightNode = [SCNNode node];<br>  ambientLightNode.light = [SCNLight light];<br>  ambientLightNode.light.type = SCNLightTypeAmbient;<br>  ambientLightNode.light.color = [UIColor darkGrayColor];<br>  [scene.rootNode addChildNode:ambientLightNode];</p>
-<p>  // retrieve the ship node<br>  SCNNode *ship = [scene.rootNode childNodeWithName:@”ship” recursively:YES];</p>
-<p>  // animate the 3d object<br>  [ship runAction:[SCNAction repeatActionForever:[SCNAction rotateByX:0 y:2 z:0 duration:1]]];</p>
-<p>  // retrieve the SCNView<br>  SCNView <em>scnView = (SCNView </em>)self.view;</p>
-<p>  // set the scene to the view<br>  scnView.scene = scene;</p>
-<p>  // allows the user to manipulate the camera<br>  scnView.allowsCameraControl = YES;</p>
-<p>  // show statistics such as fps and timing information<br>  scnView.showsStatistics = YES;</p>
-<p>  // configure the view<br>  scnView.backgroundColor = [UIColor blackColor];</p>
-<p>  // add a tap gesture recognizer<br>  UITapGestureRecognizer <em>tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];<br>  NSMutableArray </em>gestureRecognizers = [NSMutableArray array];<br>  [gestureRecognizers addObject:tapGesture];<br>  [gestureRecognizers addObjectsFromArray:scnView.gestureRecognizers];<br>  scnView.gestureRecognizers = gestureRecognizers;<br>}</p>
-</li>
-</ul>
-<p></p>
-
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">//加载一个场景scene</span><br><span class="line">SCNScene *scene = [SCNScene sceneNamed:@<span class="string">"art.scnassets/ship.scn"</span>];</span><br><span class="line"></span><br><span class="line">//给场景scene添加一个摄像机节点</span><br><span class="line">SCNNode *cameraNode = [SCNNode node];</span><br><span class="line">cameraNode.camera = [SCNCamera camera];</span><br><span class="line">[scene.rootNode addChildNode:cameraNode];</span><br><span class="line"></span><br><span class="line">//设置摄像机的位置</span><br><span class="line">cameraNode.position = SCNVector3Make(0, 0, 15);</span><br><span class="line"></span><br><span class="line">//给场景scene添加一个光照节点</span><br><span class="line">SCNNode *lightNode = [SCNNode node];</span><br><span class="line">lightNode.light = [SCNLight light];</span><br><span class="line">lightNode.light.type = SCNLightTypeOmni;</span><br><span class="line">lightNode.position = SCNVector3Make(0, 10, 10);</span><br><span class="line">[scene.rootNode addChildNode:lightNode];</span><br><span class="line"></span><br><span class="line">//给场景scene添加一个环境光节点</span><br><span class="line">SCNNode *ambientLightNode = [SCNNode node];</span><br><span class="line">ambientLightNode.light = [SCNLight light];</span><br><span class="line">ambientLightNode.light.type = SCNLightTypeAmbient;</span><br><span class="line">ambientLightNode.light.color = [UIColor darkGrayColor];</span><br><span class="line">[scene.rootNode addChildNode:ambientLightNode];</span><br><span class="line"></span><br><span class="line">//self.view 转换为SCNView</span><br><span class="line">SCNView *scnView = (SCNView *)self.view;</span><br><span class="line"></span><br><span class="line">//在scnView上添加一个场景scene</span><br><span class="line">scnView.scene = scene;</span><br><span class="line"></span><br><span class="line">//允许触屏控制摄像机位置</span><br><span class="line">scnView.allowsCameraControl = YES;</span><br><span class="line">   </span><br><span class="line">scnView.backgroundColor = [UIColor blackColor];</span><br></pre></td></tr></table></figure>
       
     </div>
     
