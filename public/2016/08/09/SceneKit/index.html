@@ -20,7 +20,11 @@
 ● SCNNode：一个场景的基本层次结构，节点可以添加几何形状，灯光，摄">
 <meta property="og:image" content="http://7xrxzy.com1.z0.glb.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-08-09%2017.45.56.png">
 <meta property="og:image" content="http://7xrxzy.com1.z0.glb.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-08-09%2017.46.29.png">
-<meta property="og:updated_time" content="2016-08-11T03:34:07.000Z">
+<meta property="og:image" content="http://7xrxzy.com1.z0.glb.clouddn.com/1415779251380250.png">
+<meta property="og:image" content="http://7xrxzy.com1.z0.glb.clouddn.com/3d_coordinate_system_2x.png">
+<meta property="og:image" content="http://7xrxzy.com1.z0.glb.clouddn.com/spinning.gif">
+<meta property="og:image" content="http://7xrxzy.com1.z0.glb.clouddn.com/textures.png">
+<meta property="og:updated_time" content="2016-08-11T03:56:03.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SceneKit虚拟现实和3D图形">
 <meta name="twitter:description" content="上期分享中实现了使用CoreMotion获取设备运动状态，从而实现交互数据准备。本期要简单介绍一下SceneKit，用这个图形框架实现虚拟现实的立体图像，以及图像对运动的响应。
@@ -93,11 +97,11 @@ var _hmt = _hmt || [];
 				<div class="tips-box hide">
 					<div class="tips-arrow"></div>
 					<ul class="tips-inner">
-						<li>菜单</li>
-						<li>标签</li>
+						<li>Menu</li>
+						<li>Tags</li>
 						
 						
-						<li>关于我</li>
+						<li>About</li>
 						
 					</ul>
 				</div>
@@ -260,11 +264,21 @@ var _hmt = _hmt || [];
 <h2 id="快速入门Demo0"><a href="#快速入门Demo0" class="headerlink" title="快速入门Demo0"></a>快速入门Demo0</h2><p>新建一个Xcode工程<br><img src="http://7xrxzy.com1.z0.glb.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-08-09%2017.45.56.png" alt="img"><br><img src="http://7xrxzy.com1.z0.glb.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-08-09%2017.46.29.png" alt="img"><br>选择SceneKit，就会初始化一个Demo。<br>我们称之为Demo0吧，这是一个简单的开始，通过了解Demo中的代码你可以快速了解SceneKit具体能干什么。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">//加载一个场景scene</span><br><span class="line">SCNScene *scene = [SCNScene sceneNamed:@<span class="string">"art.scnassets/ship.scn"</span>];</span><br><span class="line"></span><br><span class="line">//给场景scene添加一个摄像机节点</span><br><span class="line">SCNNode *cameraNode = [SCNNode node];</span><br><span class="line">cameraNode.camera = [SCNCamera camera];</span><br><span class="line">[scene.rootNode addChildNode:cameraNode];</span><br><span class="line"></span><br><span class="line">//设置摄像机的位置</span><br><span class="line">cameraNode.position = SCNVector3Make(0, 0, 15);</span><br><span class="line"></span><br><span class="line">//给场景scene添加一个光照节点</span><br><span class="line">SCNNode *lightNode = [SCNNode node];</span><br><span class="line">lightNode.light = [SCNLight light];</span><br><span class="line">lightNode.light.type = SCNLightTypeOmni;</span><br><span class="line">lightNode.position = SCNVector3Make(0, 10, 10);</span><br><span class="line">[scene.rootNode addChildNode:lightNode];</span><br><span class="line"></span><br><span class="line">//给场景scene添加一个环境光节点</span><br><span class="line">SCNNode *ambientLightNode = [SCNNode node];</span><br><span class="line">ambientLightNode.light = [SCNLight light];</span><br><span class="line">ambientLightNode.light.type = SCNLightTypeAmbient;</span><br><span class="line">ambientLightNode.light.color = [UIColor darkGrayColor];</span><br><span class="line">[scene.rootNode addChildNode:ambientLightNode];</span><br><span class="line"></span><br><span class="line">//self.view 转换为SCNView</span><br><span class="line">SCNView *scnView = (SCNView *)self.view;</span><br><span class="line"></span><br><span class="line">//在scnView上添加一个场景scene</span><br><span class="line">scnView.scene = scene;</span><br><span class="line"></span><br><span class="line">//允许触屏控制摄像机位置</span><br><span class="line">scnView.allowsCameraControl = YES;</span><br><span class="line"> //取出Node ship</span><br><span class="line">SCNNode *ship = [scene.rootNode childNodeWithName:@<span class="string">"ship"</span> recursively:YES];</span><br><span class="line">//给ship添加动画。</span><br><span class="line">[ship runAction:[SCNAction repeatActionForever:[SCNAction rotateByX:0 y:2 z:0 duration:1]]];</span><br><span class="line">   </span><br><span class="line">scnView.backgroundColor = [UIColor blackColor];</span><br></pre></td></tr></table></figure>
 <p>这样的代码即可实现一个简单的3D场景，SCNScene负责加载场景，摄像机SCNCamera负责实现确定视角，SCNLight负责光照，整个结构以节点SCNNode这种形式组织，通过这个官方的例子，很快就可以入门SceneKit 3D开发。</p>
-<h2 id="Scene-Kit概要"><a href="#Scene-Kit概要" class="headerlink" title="Scene Kit概要"></a>Scene Kit概要</h2><p>###节点</p>
-<p>###摄像机</p>
-<p>###光照</p>
-<p>###几何模型对象</p>
-<p>###动画</p>
+<h2 id="Scene-Kit概要"><a href="#Scene-Kit概要" class="headerlink" title="Scene Kit概要"></a>Scene Kit概要</h2><p>####节点(SCNode)<br>不仅是光照、模型、材质、摄像机这几个具体的对象，Scene Kit 使用节点 (在3D图形学中，像这样的树状节点结构一般被称做 scene graph，这也是 Scene Kit 名称由来的一种解释) 以树状结构来组织内容，每个节点都存储了相对其父节点的位移、旋转角度、缩放等信息，父节点也是如此，一直向上，直到根节点。假如要给一个节点确定一个位置，就必须将它挂载到节点树中的某个节点上，可以使用下面的几个操作方法：<br>-addChildNode(<em>:)<br>-insertChildNode(</em>: atIndex:)<br>-removeFromParentNode()<br>这些方法与 iOS 和 OS X 中管理 view 和 layer 层级方法如出一辙。<br><img src="http://7xrxzy.com1.z0.glb.clouddn.com/1415779251380250.png" alt="img"></p>
+<p>####摄像机（SCNCamera）<br><img src="http://7xrxzy.com1.z0.glb.clouddn.com/3d_coordinate_system_2x.png" alt="img"></p>
+<p>####光照（SCNLight）<br>Scene Kit 中完全都是动态光照，使用起来一般会很简单，但也意味着与完整的游戏引擎相比，光照这块进步并不明显。Scene Kit 提供四种类型的光照：环境光、定向光源、点光源和聚光灯。</p>
+<p>通常来说，旋转坐标轴和变换角度并不是设定光照的最佳方法。下面的例子表示一个光照对象通过一个节点对象来设置空间坐标，再通过 “look at” 约束，将光照对象约束到了目标对象上，即使它移动，光照也会一直朝向目标对象。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="built_in">let</span> spot = SCNLight()</span><br><span class="line">spot.type = SCNLightTypeSpot</span><br><span class="line">spot.castsShadow = <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">let</span> spotNode = SCNNode()</span><br><span class="line">spotNode.light = spot</span><br><span class="line">spotNode.position = SCNVector3(x: 4, y: 7, z: 6)</span><br><span class="line"></span><br><span class="line"><span class="built_in">let</span> lookAt = SCNLookAtConstraint(target: knight)</span><br><span class="line">spotNode.constraints = [lookAt]</span><br></pre></td></tr></table></figure>
+<p><img src="http://7xrxzy.com1.z0.glb.clouddn.com/spinning.gif" alt="gif"></p>
+<p>####几何模型对象<br>Scene Kit 内建了几种简单的几何模型，如盒子、球体、平面、圆锥体等，但对于游戏来说，一般都会从文件中加载3D模型。你可以通过制定文件名来导入 (或导出) COLLADA 格式的模型文件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> chessPieces = SCNScene(named: <span class="string">"chess pieces"</span>) // SCNScene?</span><br></pre></td></tr></table></figure>
+<p>如果一个从文件里加载的场景可以全部显示时，将其设置成 SCNView 的 scene 就好了；但如果加载的场景文件中包含了多个对象，只有一部分对象要显示在屏幕上时，就可以通过名字找到这个对象，再手动加载到 view 上：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="built_in">let</span> knight = chessPieces.rootNode.childNodeWithName(<span class="string">"Knight"</span>, recursively: <span class="literal">true</span>) &#123;</span><br><span class="line">   sceneView.scene?.rootNode.addChildNode(knight)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这是一个对导入文件原始节点的引用，其中包含了任一和每一个子节点，也包括了模型对象 (包括其材质)，光照，以及绑定在这些节点上的摄像机。只要传入的名字一样，不论调用多少次，返回的都是对同一个对象的引用。<br><img src="http://7xrxzy.com1.z0.glb.clouddn.com/textures.png" alt="img"></p>
+<p>####动画<br>Scene Kit 的对象中绝大多数属性都是可以进行动画的，就像 Cocoa (或 Cocoa Touch) 框架一样，你可以创建一个 CAAnimation 对象，并指定一个 key path (甚至可以 “position.x”) ，然后向一个对象施加这个动画。同样的，你可以在 SCNTransaction 的 “begin” 和 “commit” 调用间去改变值，和刚才的 CAAnimation 非常相似：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="built_in">let</span> move = CABasicAnimation(keyPath: <span class="string">"position.x"</span>)</span><br><span class="line">move.byValue  = 10</span><br><span class="line">move.duration = 1.0</span><br><span class="line">knight.addAnimation(move, <span class="keyword">for</span>Key: <span class="string">"slide right"</span>)</span><br></pre></td></tr></table></figure>
+<p>Scene Kit 也提供了像 Sprite Kit 那样的 action 形式的动画 API，你可以创建串行的动画组，也支持自定义 action 来协同使用。与 Core Animation 不同的是，这些 action 作为游戏循环的一部分执行，在每一帧都更新模型对象的值，而不只是更新表现层的节点。</p>
+<p>##实现虚拟现实界面与交互</p>
 
       
     </div>
