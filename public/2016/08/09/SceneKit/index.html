@@ -24,7 +24,7 @@
 <meta property="og:image" content="http://7xrxzy.com1.z0.glb.clouddn.com/3d_coordinate_system_2x.png">
 <meta property="og:image" content="http://7xrxzy.com1.z0.glb.clouddn.com/spinning.gif">
 <meta property="og:image" content="http://7xrxzy.com1.z0.glb.clouddn.com/textures.png">
-<meta property="og:updated_time" content="2016-08-11T04:02:31.000Z">
+<meta property="og:updated_time" content="2016-08-12T02:59:46.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SceneKit虚拟现实和3D图形">
 <meta name="twitter:description" content="上期分享中实现了使用CoreMotion获取设备运动状态，从而实现交互数据准备。本期要简单介绍一下SceneKit，用这个图形框架实现虚拟现实的立体图像，以及图像对运动的响应。
@@ -98,10 +98,10 @@ var _hmt = _hmt || [];
 					<div class="tips-arrow"></div>
 					<ul class="tips-inner">
 						<li>Menu</li>
-						<li>标签</li>
+						<li>Tags</li>
 						
 						
-						<li>关于我</li>
+						<li>About</li>
 						
 					</ul>
 				</div>
@@ -280,7 +280,10 @@ var _hmt = _hmt || [];
 <h4 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h4><p>Scene Kit 的对象中绝大多数属性都是可以进行动画的，就像 Cocoa (或 Cocoa Touch) 框架一样，你可以创建一个 CAAnimation 对象，并指定一个 key path (甚至可以 “position.x”) ，然后向一个对象施加这个动画。同样的，你可以在 SCNTransaction 的 “begin” 和 “commit” 调用间去改变值，和刚才的 CAAnimation 非常相似：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="built_in">let</span> move = CABasicAnimation(keyPath: <span class="string">"position.x"</span>)</span><br><span class="line">move.byValue  = 10</span><br><span class="line">move.duration = 1.0</span><br><span class="line">knight.addAnimation(move, <span class="keyword">for</span>Key: <span class="string">"slide right"</span>)</span><br></pre></td></tr></table></figure>
 <p>Scene Kit 也提供了像 Sprite Kit 那样的 action 形式的动画 API，你可以创建串行的动画组，也支持自定义 action 来协同使用。与 Core Animation 不同的是，这些 action 作为游戏循环的一部分执行，在每一帧都更新模型对象的值，而不只是更新表现层的节点。</p>
-<h2 id="实现虚拟现实界面与交互"><a href="#实现虚拟现实界面与交互" class="headerlink" title="实现虚拟现实界面与交互"></a>实现虚拟现实界面与交互</h2>
+<h2 id="实现虚拟现实界面与交互"><a href="#实现虚拟现实界面与交互" class="headerlink" title="实现虚拟现实界面与交互"></a>实现虚拟现实界面与交互</h2><p>实现虚拟现实的基本思想：模拟人的左右眼看到的图像细微差别，实现立体成像。在这个图像的基础上，加入身体移动与图像的交互，即低头抬头后转，移动位置后，图像会根据人体动作做出相应的改变，界面显示和真实世界展示相似。这样就实现了视觉上的虚拟现实。</p>
+<p>未来虚拟现实还可以在听觉，触觉，甚至是味觉嗅觉等方面模拟现实的情况，实现更高级的虚拟现实，当然这是后话了。</p>
+<p>我们这次要做的事情，就是在屏幕上创造出两个图像，对Camera在X轴上的位置进行细微调整，使两个场景的Camera模拟人的左右眼，创造视差，同时利用CoreMotion获取到的旋转角姿态角对Camera的Position进行调整，响应人体的动作。</p>
+<h4 id="Demo1Cardboard虚拟现实"><a href="#Demo1Cardboard虚拟现实" class="headerlink" title="Demo1Cardboard虚拟现实"></a>Demo1Cardboard虚拟现实</h4>
       
     </div>
     
