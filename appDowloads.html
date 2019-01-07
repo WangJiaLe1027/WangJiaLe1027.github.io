@@ -1,42 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            document.querySelector('.downlink').addEventListener('click', function () {
-                var loadDateTime = new Date(),
-                        href = location.href,
-                        appInnerUrlPrefix = 'http://a.app.qq.com/o/simple.jsp?pkgname=',
-                        newHref = href.substring(href.indexOf('//') + 2)
-                var isiOS = navigator.userAgent.match('iPad') || navigator.userAgent.match('iPhone') || navigator.userAgent.match(
-                                'iPod'),
-                        isAndroid = navigator.userAgent
-                                .match('Android'),
-                        isDesktop = !isiOS && !isAndroid;
-                if (isiOS) {
-                    newHref = appInnerUrlPrefix + "com.zhulogic.xita_home";
-                } else if (isAndroid) {
-                    newHref = appInnerUrlPrefix + "com.zhulogic.xita_home&g_f=991653";
-                } else {
-                    newHref = appInnerUrlPrefix + "com.zhulogic.xita_home&g_f=991653";
-                }
-                setTimeout(function () {
-                    console.log(newHref);
-                    var timeOutDateTime = new Date();
-                    if (!loadDateTime || timeOutDateTime - loadDateTime < 1210) {
-                        location.href = newHref;
-                    }
-                }, 1200);
-                location.href = 'zhulogic://';
-            }, false)
-        }, false)
-    </script>
-</head>
-<body>
-<div class="downlink" style="background-color: red;height: 300px;width: 300px;">
- 
-</div>
-</body>
+<html>   
+    <head>   
+        <meta name="viewport" content="width=device-width" />   
+    </head>   
+        
+        
+        <a href="http://itunes.apple.com/cn/app/wen-yi-sheng/id551521341?mt=8" id="openApp">问医生</a>
+        <script type="text/javascript">
+            document.getElementById('openApp').onclick = function(e){
+                // 通过iframe的方式试图打开APP，如果能正常打开，会直接切换到APP，并自动阻止a标签的默认行为
+                // 否则打开a标签的href链接
+                var ifr = document.createElement('iframe');
+                ifr.src = 'wbmain://';
+                ifr.style.display = 'none';
+                document.body.appendChild(ifr);
+                window.setTimeout(function(){
+                                  document.body.removeChild(ifr);
+                                  },3000)
+            };
+            </script>  
 </html>
