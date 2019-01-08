@@ -253,9 +253,9 @@ function recordAppAndDownload(appUrl, appName) {
         recordAppAndDownload("http://itunes.apple.com/cn/app/id584398176?mt=8", "ICBC")
     }
     else if (browser.versions.android) {
-        if (!browser.versions.weixin) {
-            recordAppAndDownload("https://www.icbc.com.cn/ICBC/html/download/dkq/ICBCAndroidAbroadBank1120.apk", "ICBC")
-        }
+//         if (!browser.versions.weixin) {
+        recordAppAndDownload("https://www.icbc.com.cn/ICBC/html/download/dkq/ICBCAndroidAbroadBank1120.apk", "ICBC")
+//         }
     }
     else {
         window.location = "http://m.icbc.com.cn/ICBC/客户端软件下载/客户端软件下载.htm";
