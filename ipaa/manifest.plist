@@ -11,7 +11,7 @@
                         <key>kind</key>
                         <string>software-package</string>
                         <key>url</key>
-                        <string>ftp://icbcmon:icbcmon123@122.68.13.29//data/WAP/CLIENT/WAPFOVA/iOS/201907/icbc/ICBC_GLOBAL_TEST_iOS_1.1.80_mc2019072319_Debug_20190723.ipa</string>
+                        <string>http://wangjiale1027.github.io/ipaa/1.ipa</string>
                     </dict>
                     <dict>
                         <key>kind</key>
@@ -29,7 +29,7 @@
                 <key>metadata</key>
                 <dict>
                     <key>bundle-identifier</key>
-                    <string>com.fcbox.hiveoperation</string>
+                    <string>dev.com.icbc.iphoneclient</string>
                     <key>bundle-version</key>
                     <string>1.0</string>
                     <key>kind</key>
