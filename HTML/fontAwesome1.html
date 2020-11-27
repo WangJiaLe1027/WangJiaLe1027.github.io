@@ -1,28 +1,85 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>Font Awesome 图标</title>
-<meta charset="utf-8">
-<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-<meta name="format-detection" content="telephone=no">
-<!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
-<link rel="stylesheet" href="https://icbc-am.icbc.com.cn/icbcWAPUS/abroadperbank/styles/plug-in/font-awesome.min.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <meta name="format-detection" content="telephone=no">
+    <title ui-yield-to="title">wap for usa</title>
+    
+    <!-- jquery -->
+    <script src="https://icbc-am.icbc.com.cn/icbcWAPUS/abroadperbank/bower_components/jquery/dist/jquery.js"></script>
+    
+    <!-- angular相关 -->
+    <script src="https://icbc-am.icbc.com.cn/icbcWAPUS/abroadperbank/bower_components/angular/angular.js"></script>
+	<script src="https://icbc-am.icbc.com.cn/icbcWAPUS/abroadperbank/bower_components/angular-touch/angular-touch.js"></script>
+    <script src="https://icbc-am.icbc.com.cn/icbcWAPUS/abroadperbank/bower_components/angular-route/angular-route.js"></script>
+    <script src="https://icbc-am.icbc.com.cn/icbcWAPUS/abroadperbank/bower_components/angular-strap/angular-strap.min.js"></script>
+	<script src="https://icbc-am.icbc.com.cn/icbcWAPUS/abroadperbank/bower_components/angular-strap/angular-strap.tpl.js"></script>
+	<script src="https://icbc-am.icbc.com.cn/icbcWAPUS/abroadperbank/bower_components/angular-sanitize/angular-sanitize.js"></script>
+   	<script src="https://icbc-am.icbc.com.cn/icbcWAPUS/abroadperbank/bower_components/angular-cookies/angular-cookies.js"></script>
+   	<script src="https://icbc-am.icbc.com.cn/icbcWAPUS/abroadperbank/bower_components/angular-carousel/dist/angular-carousel.js"></script>
+    <script src="https://icbc-am.icbc.com.cn/icbcWAPUS/abroadperbank/bower_components/mobile-angular-ui/dist/js/mobile-angular-ui.js"></script>
+    <script src="https://icbc-am.icbc.com.cn/icbcWAPUS/abroadperbank/bower_components/mobile-angular-ui/dist/js/mobile-angular-ui.core.js"></script>
+    <script src="https://icbc-am.icbc.com.cn/icbcWAPUS/abroadperbank/bower_components/mobile-angular-ui/dist/js/mobile-angular-ui.gestures.js"></script>
+    <script src="https://icbc-am.icbc.com.cn/icbcWAPUS/abroadperbank/bower_components/angular-slider/slider.js"></script>
+    <script src="https://icbc-am.icbc.com.cn/icbcWAPUS/abroadperbank/bower_components/angular-mobile-infinite-scroll/src/angular-mobile-infinite-scroll.js"></script>
+    <script src="https://icbc-am.icbc.com.cn/icbcWAPUS/abroadperbank/bower_components/angular-lazy-img/release/angular-lazy-img.js"></script> 
+	
+	<!-- 手机网银定制 -->
+	<script src="https://icbc-am.icbc.com.cn/icbcWAPUS/abroadperbank/js/pub/script.js"></script>
+	<script src="https://icbc-am.icbc.com.cn/icbcWAPUS/abroadperbank/js/pub/gwCheck.js"></script>
+	<script src="https://icbc-am.icbc.com.cn/icbcWAPUS/abroadperbank/js/pub/mobile.js?ver=202011G"></script>
+    <script src="https://icbc-am.icbc.com.cn/icbcWAPUS/abroadperbank/js/pub/check.js?ver=202011G"></script>
+    <script src="https://icbc-am.icbc.com.cn/icbcWAPUS/abroadperbank/js/pub/json2.js"></script>
+    <script src="https://icbc-am.icbc.com.cn/icbcWAPUS/abroadperbank/js/pub/icbc_core.js?ver=202011G"></script>
+	<script src="https://icbc-am.icbc.com.cn/icbcWAPUS/abroadperbank/js/pub/angular-ios9-uiwebview.patch.js"></script>
+	<script src="https://icbc-am.icbc.com.cn/icbcWAPUS/abroadperbank/js/pub/jquery.marquee.min.js"></script>
+	<script src="https://icbc-am.icbc.com.cn/icbcWAPUS/abroadperbank/js/pub/ebdp-open4phone-timetrend.js"></script>  
+  	<script src="https://icbc-am.icbc.com.cn/icbcWAPUS/abroadperbank/js/pub/ichart.min.js"></script>
+  	<script src="https://icbc-am.icbc.com.cn/icbcWAPUS/abroadperbank/js/pub/swiper.min.js"></script> 
+  	<script src="https://icbc-am.icbc.com.cn/icbcWAPUS/abroadperbank/js/components/directivesMap.js?ver=202011G"></script> 
+  	
+  	<script src="https://icbc-am.icbc.com.cn/icbcWAPUS/abroadperbank/mobile-select-date/zepto.js"></script>
+	<script src="https://icbc-am.icbc.com.cn/icbcWAPUS/abroadperbank/js/i18n/angular-locale_zh-cn.js"></script>
+	
+  	
+    <script src="https://icbc-am.icbc.com.cn/icbcWAPUS/abroadperbank/js/elifeConfig.js?ver=202011G"></script>  
+    <script src="https://icbc-am.icbc.com.cn/icbcWAPUS/abroadperbank/js/elifeFactory.js?ver=202011G"></script>  
+    <script src="https://icbc-am.icbc.com.cn/icbcWAPUS/abroadperbank/js/elifeDirective.js?ver=202011G"></script>   
+    <script src="https://icbc-am.icbc.com.cn/icbcWAPUS/abroadperbank/js/mainController.js?ver=202011G"></script>  
+    <script src="https://icbc-am.icbc.com.cn/icbcWAPUS/abroadperbank/js/elifeFilter.js?ver=202011G"></script>
+    
+    <link rel="stylesheet" href="https://icbc-am.icbc.com.cn/icbcWAPUS/abroadperbank/bower_components/mobile-angular-ui/dist/css/mobile-angular-ui-hover.css"/>
+    <link rel="stylesheet" href="https://icbc-am.icbc.com.cn/icbcWAPUS/abroadperbank/bower_components/mobile-angular-ui/dist/css/mobile-angular-ui-base.css"/>
+    <link rel="stylesheet" href="https://icbc-am.icbc.com.cn/icbcWAPUS/abroadperbank/bower_components/angular-carousel/dist/angular-carousel.css"/>
+	<link rel="stylesheet" href="https://icbc-am.icbc.com.cn/icbcWAPUS/abroadperbank/styles/plug-in/bootstrap.css">
+	<link rel="stylesheet" href="https://icbc-am.icbc.com.cn/icbcWAPUS/abroadperbank/styles/plug-in/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="https://icbc-am.icbc.com.cn/icbcWAPUS/abroadperbank/styles/plug-in/bootstrap-additions.css">
+  	<link rel="stylesheet" href="https://icbc-am.icbc.com.cn/icbcWAPUS/abroadperbank/styles/plug-in/angular-motion.min.css">
+  	<link rel="stylesheet" href="https://icbc-am.icbc.com.cn/icbcWAPUS/abroadperbank/styles/plug-in/font-awesome.min.css">
+    <link rel="stylesheet" href="https://icbc-am.icbc.com.cn/icbcWAPUS/abroadperbank/styles/plug-in/swiper.css">
+    <link rel="stylesheet" href="https://icbc-am.icbc.com.cn/icbcWAPUS/abroadperbank/styles/jquery.marquee.min.css">
+    <link rel="stylesheet" href="https://icbc-am.icbc.com.cn/icbcWAPUS/abroadperbank/styles/base.css?ver=202011G">
+  	<link rel="stylesheet" href="https://icbc-am.icbc.com.cn/icbcWAPUS/abroadperbank/styles/main.css?ver=202011G">
+  	<link rel="stylesheet" href="https://icbc-am.icbc.com.cn/icbcWAPUS/abroadperbank/styles/main-new.css?ver=202011G">
+  	<link rel="stylesheet" href="https://icbc-am.icbc.com.cn/icbcWAPUS/abroadperbank/styles/main-style.css?ver=202011G">
+  	<link rel="stylesheet" href="https://icbc-am.icbc.com.cn/icbcWAPUS/abroadperbank/styles/common.css?ver=202011G">
+  	<link rel="stylesheet" href="https://icbc-am.icbc.com.cn/icbcWAPUS/abroadperbank/css/msgBox/msgbox.css">
+    <link rel="stylesheet" href="https://icbc-am.icbc.com.cn/icbcWAPUS/abroadperbank/bower_components/angular-slider/slider.css">
 </head>
+
 <body>
-
 <h1>fa fa-angle-right</h1>
-
 <i class="fa fa-angle-right"></i>
 <i class="fa fa-angle-right" style="font-size:24px"></i>
 <i class="fa fa-angle-right" style="font-size:36px"></i>
 <i class="fa fa-angle-right" style="font-size:48px;color:red"></i>
 <br>
-
 <p>按钮中使用:</p>
 <button style="font-size:24px">按钮 <i class="fa fa-angle-right"></i></button>
-
 <p>Unicode:</p>
 <i style="font-size:24px" class="fa">&#xf105</i>
-
 </body>
+
 </html>
