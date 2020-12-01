@@ -87,7 +87,9 @@
   var width = 0;
   var id = setInterval(frame, 10);
   function frame() {
-    
+    var styles = $window.getComputedStyle(el),
+    margin = parseInt(styles.marginTop) + parseInt(styles.marginBottom);
+    parentStyle['padding' + side] = el.offsetHeight + margin + 'px';
   }
 </script>
 </body>
