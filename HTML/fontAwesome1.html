@@ -70,23 +70,26 @@
 </head>
 
 <body>
-	<script>
-
-//1.while 永远为真循环
-while (true) {var interval = setInterval(adjustParentPadding, 30);}
- 
-</script>
 <h1>fa fa-angle-right</h1>
 <i class="fa fa-angle-right"></i>
 <i class="fa fa-angle-right" style="font-size:24px"></i>
 <i class="fa fa-angle-right" style="font-size:36px"></i>
-<i class="fa fa-angle-right" style="font-size:48px;color:red"></i>
+<i id="myBar" class="fa fa-angle-right" style="font-size:48px;color:red"></i>
 <br>
 <p>按钮中使用:</p>
 <button style="font-size:24px">按钮 <i class="fa fa-angle-right"></i></button>
 <p>Unicode:</p>
 <i style="font-size:24px" class="fa">&#xf105</i>
 <script src="https://icbc-am.icbc.com.cn/icbcWAPUS/abroadperbank/js/pub/msgbox.js"></script>
+<script>
+
+  var elem = document.getElementById("myBar");   
+  var width = 0;
+  var id = setInterval(frame, 10);
+  function frame() {
+    
+  }
+</script>
 </body>
 
 </html>
